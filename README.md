@@ -38,16 +38,3 @@ All works are laid out with sources for each customer to be able to download the
 
 > **Мечтаю переехать в Канаду или Америку но пока не как не могу это осуществить.**
 
-Мои Репозитории 
-[![codewars](https://github.com/anato511693/My-video-projects)
-<p dir="auto">
-  <a href="https://github.com/anato511693/My-video-projects">
-    <img src=":open_file_folder:" alt="Video projects" style="max-width: 100%;">
-  </a>
-  <a href="https://github.com/anato511693/My-design-projects">
-    <img src=":open_file_folder:" alt="Design projects" style="max-width: 100%;">
-  </a>
-  <a href="https://github.com/anato511693/-The-Source-of-Life-The-SOL-">
-    <img src=":open_file_folder:" alt="The SOL project" style="max-width: 100%;">
-  </a>
-</p>
