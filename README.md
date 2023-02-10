@@ -1,6 +1,6 @@
 # My-design-projects
 
-# ENG 
+# ENG [^note]:
 
 I am **Anatoly Shipilov**, better known as **Anato Fabian** or **Anato Fabian Lee-Shipilov**. I'm a bit of a designer and a bit of a blogger and I do it all just because I like it.
 
@@ -12,7 +12,7 @@ All works are laid out with sources for each customer to be able to download the
 
 -----------------------------------------------------------------------------------------------------------
 
-# RU
+# RU [^note]:
 
 Я **Анатолий Шипилов**, более известен как **Anato Fabian** или **Anato Fabian Lee-Shipilov**. Я немного дизайнер и немного блогер и все я это делаю только лишь потому что мне это нравится.
 
