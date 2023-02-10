@@ -1,9 +1,6 @@
 # My-design-projects
 
 # ENG 
-![This is an image](https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom#/media/File:Flag_of_the_United_Kingdom_(1-2).svg)
-
-
 [^note]:
 
 I am **Anatoly Shipilov**, better known as **Anato Fabian** or **Anato Fabian Lee-Shipilov**. I'm a bit of a designer and a bit of a blogger and I do it all just because I like it.
