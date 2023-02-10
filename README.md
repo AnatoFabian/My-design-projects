@@ -2,13 +2,13 @@
 
 <p dir="auto">
   <a href="https://github.com/anato511693/My-video-projects">
-    <img src=":open_file_folder:" alt="Video projects" style="max-width: 100%;">
+    <img src="https://w7.pngwing.com/pngs/314/584/png-transparent-computer-icons-video-display-resolution-others-angle-text-rectangle-thumbnail.png" alt="Video projects" height="100">
   </a>
   <a href="https://github.com/anato511693/My-design-projects">
-    <img src=":open_file_folder:" alt="Design projects" style="max-width: 100%;">
+    <img src="https://cdn-icons-png.flaticon.com/512/3159/3159310.png" alt="Design projects" height="100">
   </a>
   <a href="https://github.com/anato511693/-The-Source-of-Life-The-SOL-">
-    <img src=":open_file_folder:" alt="The SOL project" style="max-width: 100%;">
+    <img src="-The-Source-of-Life-The-SOL-/images/Логотипы/The Sol/The Sol Round.png" alt="The SOL project" height="100">
   </a>
 </p>
 
