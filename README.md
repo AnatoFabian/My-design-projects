@@ -1,4 +1,4 @@
-# My-design-projects
+# My project - Mob проекты
 
 <p dir="auto">
   <a href="https://github.com/anato511693/My-video-projects">
@@ -12,6 +12,7 @@
   </a>
 </p>
 
+# My-design-projects
 
 # ENG 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flag_of_the_United_States.png/1280px-Flag_of_the_United_States.png" height="32"/></h1>
