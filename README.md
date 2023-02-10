@@ -14,7 +14,7 @@
 
 
 # ENG 
-<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flag_of_the_United_States.png/1280px-Flag_of_the_United_States.png" height="32"/></h1>
 
 I am **Anatoly Shipilov**, better known as **Anato Fabian** or **Anato Fabian Lee-Shipilov**. I'm a bit of a designer and a bit of a [blogger](https://www.youtube.com/@AnatoFabian/) and I do it all just because I like it.
 
