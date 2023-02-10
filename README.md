@@ -8,7 +8,7 @@
     <img src="https://cdn-icons-png.flaticon.com/512/3159/3159310.png" alt="Design projects" height="100">
   </a>
   <a href="https://github.com/anato511693/-The-Source-of-Life-The-SOL-">
-    <img src="-The-Source-of-Life-The-SOL-/images/Логотипы/The Sol/The Sol Round.png" alt="The SOL project" height="100">
+    <img src="https://raw.githubusercontent.com/anato511693/-The-Source-of-Life-The-SOL-/main/images/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B/The%20Sol/The%20Sol%20Round.png" alt="The SOL project" height="100">
   </a>
 </p>
 
