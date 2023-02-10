@@ -26,7 +26,7 @@ All works are laid out with sources for each customer to be able to download the
 
 -----------------------------------------------------------------------------------------------------------
 
-# RU <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
+# RU <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" height="32"/></h1>
 
 [^note]:
 
