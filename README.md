@@ -1,4 +1,4 @@
-# My project - Mob проекты
+# My project - Moи проекты
 
 <p dir="auto">
   <a href="https://github.com/anato511693/My-video-projects">
