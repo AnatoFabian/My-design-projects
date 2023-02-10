@@ -1,5 +1,7 @@
 # My-design-projects
 
+[Video projects](https://github.com/anato511693/My-video-projects) [Design projects](https://github.com/anato511693/My-design-projects) [The SOL project](https://github.com/anato511693/-The-Source-of-Life-The-SOL-)
+
 # ENG 
 [^note]:
 
