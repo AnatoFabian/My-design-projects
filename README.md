@@ -39,7 +39,7 @@ All works are laid out with sources for each customer to be able to download the
 > **Мечтаю переехать в Канаду или Америку но пока не как не могу это осуществить.**
 
 Мои Репозитории 
-[![Readme Card](https://github.com/anato511693/My-video-projects)
+[![codewars](https://github.com/anato511693/My-video-projects)
 <p dir="auto">
   <a href="https://github.com/anato511693/My-video-projects">
     <img src=":open_file_folder:" alt="Video projects" style="max-width: 100%;">
