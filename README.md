@@ -26,7 +26,8 @@ All works are laid out with sources for each customer to be able to download the
 
 -----------------------------------------------------------------------------------------------------------
 
-# RU 
+# RU <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
+
 [^note]:
 
 Я **Анатолий Шипилов**, более известен как **Anato Fabian** или **Anato Fabian Lee-Shipilov**. Я немного дизайнер и немного [блогер](https://www.youtube.com/@AnatoFabian/) и все я это делаю только лишь потому что мне это нравится.
