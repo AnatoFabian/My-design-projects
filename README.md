@@ -1,6 +1,17 @@
 # My-design-projects
 
-[Video projects](https://github.com/anato511693/My-video-projects) [Design projects](https://github.com/anato511693/My-design-projects) [The SOL project](https://github.com/anato511693/-The-Source-of-Life-The-SOL-)
+<p dir="auto">
+  <a href="https://github.com/anato511693/My-video-projects">
+    <img src="📁" alt="Video projects" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/anato511693/My-design-projects">
+    <img src="📁" alt="Design projects" style="max-width: 100%;">
+  </a>
+  <a href="https://github.com/anato511693/-The-Source-of-Life-The-SOL-">
+    <img src="📁" alt="The SOL project" style="max-width: 100%;">
+  </a>
+</p>
+
 
 # ENG 
 [^note]:
