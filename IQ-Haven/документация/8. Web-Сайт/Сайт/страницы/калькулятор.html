@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор умного дома</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .calculator-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .calculator-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .item-name {
+            flex: 1;
+            font-size: 18px;
+        }
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-selector button {
+            font-size: 18px;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .quantity-selector input {
+            width: 50px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .total-price {
+            font-size: 20px;
+            margin-top: 20px;
+            text-align: right;
+        }
+        .guarantee-selection {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .guarantee-item {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .guarantee-item.selected {
+            background-color: #007bff;
+            color: white;
+        }
+        .guarantee-item img {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+        .final-price {
+            font-size: 24px;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator-container">
+    <!-- Розетка -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/smart-plug.png" alt="Розетка">
+            Розетка
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="smart-plug-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Выключатель 1 кнопка -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/single-switch.png" alt="Выключатель 1 кнопка">
+            Выключатель 1 кнопка
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="single-switch-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Выключатель 2 кнопки -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/double-switch.png" alt="Выключатель 2 кнопки">
+            Выключатель 2 кнопки
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="double-switch-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Выключатель 3 кнопки -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/triple-switch.png" alt="Выключатель 3 кнопки">
+            Выключатель 3 кнопки
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="triple-switch-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Выключатель 4 кнопки -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/quad-switch.png" alt="Выключатель 4 кнопки">
+            Выключатель 4 кнопки
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="quad-switch-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Датчик движения -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/motion-sensor.png" alt="Датчик движения">
+            Датчик движения
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="motion-sensor-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Датчик протечки воды -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/water-leak-sensor.png" alt="Датчик протечки воды">
+            Датчик протечки воды
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="water-leak-sensor-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Анализатор воздуха и влаги -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/air-humidity-sensor.png" alt="Анализатор воздуха и влаги">
+            Анализатор воздуха и влаги
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="air-humidity-sensor-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Датчик утечки газа -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/gas-leak-sensor.png" alt="Датчик утечки газа">
+            Датчик утечки газа
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="gas-leak-sensor-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Умная колонка -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/smart-speaker.png" alt="Умная колонка">
+            Умная колонка
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="smart-speaker-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Умный замок -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/smart-lock.png" alt="Умный замок">
+            Умный замок
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="smart-lock-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Датчик присутствия -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/presence-sensor.png" alt="Датчик присутствия">
+            Датчик присутствия
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="presence-sensor-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Датчик открытия/закрытия окон дверей -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/window-door-sensor.png" alt="Датчик открытия/закрытия окон дверей">
+            Датчик открытия/закрытия окон дверей
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="window-door-sensor-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Автоматизация штор/Жалюзи -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/blind-automation.png" alt="Автоматизация штор/Жалюзи">
+            Автоматизация штор/Жалюзи
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="blind-automation-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Автоматизация полива -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/watering-automation.png" alt="Автоматизация полива">
+            Автоматизация полива
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="watering-automation-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Датчик освещенности -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/light-sensor.png" alt="Датчик освещенности">
+            Датчик освещенности
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="light-sensor-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Камеры -->
+    <div class="calculator-item">
+        <div class="item-name">
+            <img src="icons/camera.png" alt="Камеры">
+            Камеры
+        </div>
+        <div class="quantity-selector">
+            <button>-</button>
+            <input type="number" value="0" min="0" id="camera-quantity">
+            <button>+</button>
+        </div>
+    </div>
+
+    <!-- Общая стоимость -->
+    <div class="total-price">
+        Общая стоимость: <span id="total-price">0</span> тг
+    </div>
+
+    <!-- Выбор гарантии -->
+    <div class="guarantee-selection">
+        <div class="guarantee-item" id="guarantee-0m">
+            <img src="icons/3.png" alt="0 месяца"> без гарантии
+        </div>
+		<div class="guarantee-item" id="guarantee-3m">
+            <img src="icons/3.png" alt="3 месяца"> 3 месяца
+        </div>
+        <div class="guarantee-item" id="guarantee-12m">
+            <img src="icons/12.png" alt="12 месяцев"> 12 месяцев
+        </div>
+        <div class="guarantee-item" id="guarantee-24m">
+            <img src="icons/24.png" alt="24 месяца"> 24 месяца
+        </div>
+    </div>
+
+    <!-- Итоговая сумма -->
+    <div class="final-price">
+        Итоговая сумма: <span id="final-price">0</span> тг
+    </div>
+</div>
+
+<script>
+// Пример для добавления динамики кнопок и подсчета общей стоимости
+const items = [
+    { id: "smart-plug", price: 1000 },
+    { id: "single-switch", price: 500 },
+    { id: "double-switch", price: 600 },
+    { id: "triple-switch", price: 700 },
+    { id: "quad-switch", price: 800 },
+    { id: "motion-sensor", price: 1200 },
+    { id: "water-leak-sensor", price: 1500 },
+    { id: "air-humidity-sensor", price: 1300 },
+    { id: "gas-leak-sensor", price: 1700 },
+    { id: "smart-speaker", price: 2500 },
+    { id: "smart-lock", price: 3000 },
+    { id: "presence-sensor", price: 800 },
+    { id: "window-door-sensor", price: 700 },
+    { id: "blind-automation", price: 1800 },
+    { id: "watering-automation", price: 2000 },
+    { id: "light-sensor", price: 400 },
+    { id: "camera", price: 5000 },
+];
+
+let guaranteeMultiplier = 0;
+
+function updateTotalPrice() {
+    let total = 0;
+    items.forEach(item => {
+        const quantity = parseInt(document.getElementById(`${item.id}-quantity`).value);
+        total += item.price * quantity;
+    });
+    
+    // Применяем коэффициент гарантии
+    total += total * guaranteeMultiplier;
+    
+    document.getElementById("total-price").textContent = total;
+    document.getElementById("final-price").textContent = total;
+}
+
+document.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", function() {
+        const input = this.parentElement.querySelector("input");
+        let quantity = parseInt(input.value);
+        
+        if (this.textContent === "+") {
+            quantity++;
+        } else if (this.textContent === "-" && quantity > 0) {
+            quantity--;
+        }
+        
+        input.value = quantity;
+        updateTotalPrice();
+    });
+});
+// Обработка выбора гарантии
+document.getElementById("guarantee-0m").addEventListener("click", function() {
+    guaranteeMultiplier = 0;
+    updateGuaranteeSelection(this);
+});
+// Обработка выбора гарантии
+document.getElementById("guarantee-3m").addEventListener("click", function() {
+    guaranteeMultiplier = 0.54;
+    updateGuaranteeSelection(this);
+});
+
+
+document.getElementById("guarantee-12m").addEventListener("click", function() {
+    guaranteeMultiplier = 0.877;
+    updateGuaranteeSelection(this);
+});
+
+document.getElementById("guarantee-24m").addEventListener("click", function() {
+    guaranteeMultiplier = 1.214;
+    updateGuaranteeSelection(this);
+});
+
+// Обновление стилей выбранной гарантии
+function updateGuaranteeSelection(selected) {
+    const guarantees = document.querySelectorAll(".guarantee-item");
+    guarantees.forEach(item => {
+        item.classList.remove("selected");
+    });
+    selected.classList.add("selected");
+    updateTotalPrice();
+}
+
+</script>
+
+</body>
+</html>

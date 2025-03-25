@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании - IQ Haven</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #000;
+            margin-top: 20px;
+        }
+        section {
+            background-color: #fff;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        /* Стиль для пути с достижениями */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 40px 0;
+            list-style-type: none;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            border-left: 2px solid #000;
+            width: 0;
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #000;
+            border: 2px solid #fff;
+            left: -10px;
+        }
+        .timeline-item .step-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .timeline-item .step-description {
+            font-size: 16px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+        }
+		 /* Раздел для блоков */
+        .services-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service-box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            width: 23%;
+            min-width: 250px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 50px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        .service-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .service-description {
+            font-size: 14px;
+            color: #555;
+        }
+		 /* Раздел для блоков */
+        .advantages-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .advantage-box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            width: 23%;
+            min-width: 250px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .advantage-box:hover {
+            transform: translateY(-5px);
+        }
+        .advantage-icon {
+            font-size: 50px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        .advantage-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .advantage-description {
+            font-size: 14px;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+        }
+		.mission-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .mission-text {
+            font-size: 18px;
+            color: #555;
+            max-width: 800px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        .mission-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .mission-highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>О компании IQ Haven</h1>
+        <p>Уютное интеллектуальное пространство</p>
+    </header>
+
+    <div class="container">
+        <!-- Кто мы такие? -->
+        <div class="section-content">
+        <p>
+            <strong>IQ Haven</strong> — это команда профессионалов, объединившихся для того, чтобы сделать умный дом доступным для каждого. Мы — это компания, которая стоит на передовой технологий автоматизации и умных решений для частных домов, бизнеса и сельского хозяйства. 
+        </p>
+        <p>
+            Мы понимаем, как важно для наших клиентов получать качественные, инновационные и одновременно доступные решения. Наши специалисты ежедневно работают над тем, чтобы предоставить только самые лучшие продукты и услуги. Мы гордимся тем, что стали лидерами на рынке умного дома в Казахстане, а также открыли филиалы в России и Канаде, расширяя свои горизонты и предоставляя своим клиентам решения мирового уровня.
+        </p>
+        <p>
+            Наша компания работает напрямую с производителями оборудования, что позволяет нам контролировать качество и предлагать конкурентоспособные цены. Мы считаем, что высокие технологии не должны быть роскошью, а должны быть доступны каждому. Благодаря этому мы создаем решения, которые способны удовлетворить потребности клиентов на разных уровнях — от частных домов и квартир до крупных бизнес-проектов.
+        </p>
+        <p>
+            Наша команда состоит из высококвалифицированных специалистов, инженеров, дизайнеров и техников, которые постоянно совершенствуют свои знания и навыки. Мы нацелены на долгосрочные отношения с клиентами и партнерами, и ставим в приоритет не только технологические инновации, но и высокий уровень обслуживания. 
+        </p>
+        <p>
+            Вдохновленные идеей улучшения качества жизни наших клиентов, мы работаем над тем, чтобы каждый проект, будь то небольшая квартира или крупный бизнес-объект, был реализован с максимальной эффективностью и заботой о каждой детали.
+        </p>
+    </div>
+</section>
+
+        <!-- Наши достижения -->
+        <section id="achievements">
+            <h2>Наши достижения</h2>
+            <p>Компания IQ Haven за год своей работы добилась ряда значимых успехов, и мы гордимся каждым этапом нашего пути. Вот основные ключевые моменты нашей истории:</p>
+            <ul class="timeline">
+                <!-- Шаг 1 -->
+                <li class="timeline-item">
+                    <div class="step-title">Основание компании</div>
+                    <div class="step-description">В 2024 году была основана компания IQ Haven, с целью предоставить доступные и качественные решения в области умного дома и автоматизации.</div>
+                </li>
+                <!-- Шаг 2 -->
+                <li class="timeline-item">
+                    <div class="step-title">Первые успешные проекты</div>
+                    <div class="step-description">Наши первые проекты по автоматизации частных домов и бизнесов показали высокую эффективность, что позволило нам зарекомендовать себя на рынке.</div>
+                </li>
+                <!-- Шаг 3 -->
+                <li class="timeline-item">
+                    <div class="step-title">Выход на международный рынок</div>
+                    <div class="step-description">В 2024 году мы открыли филиалы в Канаде и России, что стало важным шагом в расширении нашей деятельности за пределы Казахстана.</div>
+                </li>
+                <!-- Шаг 4 -->
+                <li class="timeline-item">
+                    <div class="step-title">Лидерство на рынке Казахстана</div>
+                    <div class="step-description">Компания IQ Haven стала лидером в области автоматизации и умных домов на территории Казахстана, предложив доступные решения для частных лиц и бизнеса.</div>
+                </li>
+                <!-- Шаг 5 -->
+                <li class="timeline-item">
+                    <div class="step-title">Расширение ассортимента и услуг</div>
+                    <div class="step-description">Мы расширили нашу линейку продуктов и услуг, включая решения для умных ферм и малого бизнеса, продолжая совершенствовать и оптимизировать наши предложения.</div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Для кого наши услуги -->
+        <section id="target-audience">
+            <h2>Для кого наши услуги</h2>
+            <p>Наши решения подходят для различных секторов. Мы обеспечиваем умные и доступные технологии для частных домов, квартир, ферм и бизнеса. В каждом случае мы предлагаем индивидуальный подход и высокое качество наших услуг.</p>
+
+            <div class="services-section">
+                <!-- Частные дома -->
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="service-title">Частные дома</div>
+                    <div class="service-description">
+                        Мы предлагаем решения для автоматизации частных домов, включая управление освещением, отоплением, безопасностью и другими системами, чтобы создать комфорт и экономию.
+                    </div>
+                </div>
+
+                <!-- Квартиры -->
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-title">Квартиры</div>
+                    <div class="service-description">
+                        Умные технологии для квартир: управление климатом, освещением, мультимедиа и безопасность, обеспечивающие удобство и комфорт в каждом уголке вашего жилья.
+                    </div>
+                </div>
+
+                <!-- Автоматизация ферм и участков -->
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="service-title">Автоматизация ферм и участков</div>
+                    <div class="service-description">
+                        Мы предлагаем решения для автоматизации сельского хозяйства: управление орошением, мониторинг температуры, контроля за растениями и животными, чтобы повысить эффективность работы фермеров.
+                    </div>
+                </div>
+
+                <!-- Автоматизация бизнеса -->
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="service-title">Автоматизация бизнеса</div>
+                    <div class="service-description">
+                        Автоматизация процессов в бизнесе: от управления персоналом до аналитики и безопасности, наши решения позволяют повысить эффективность работы компаний всех размеров.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <!-- Преимущества -->
+        <section id="advantages">
+            <h2>Преимущества</h2>
+            <p>Наша компания предлагает множество преимуществ для наших клиентов. Мы гарантируем высокое качество, доступные цены и индивидуальный подход в каждом проекте.</p>
+
+            <div class="advantages-section">
+                <!-- Доступность технологий -->
+                <div class="advantage-box">
+                    <div class="advantage-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="advantage-title">Доступность технологий</div>
+                    <div class="advantage-description">
+                        Мы предлагаем самые передовые решения по доступным ценам, делая технологии умного дома доступными для всех.
+                    </div>
+                </div>
+
+                <!-- Профессиональная команда -->
+                <div class="advantage-box">
+                    <div class="advantage-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="advantage-title">Профессиональная команда</div>
+                    <div class="advantage-description">
+                        Мы работаем только с высококвалифицированными специалистами, которые имеют многолетний опыт в области автоматизации и умных технологий.
+                    </div>
+                </div>
+
+                <!-- Индивидуальный подход -->
+                <div class="advantage-box">
+                    <div class="advantage-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="advantage-title">Индивидуальный подход</div>
+                    <div class="advantage-description">
+                        Каждый проект уникален для нас. Мы предлагаем решения, которые идеально соответствуют потребностям каждого клиента.
+                    </div>
+                </div>
+
+                <!-- Постоянное обучение -->
+                <div class="advantage-box">
+                    <div class="advantage-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="advantage-title">Постоянное обучение</div>
+                    <div class="advantage-description">
+                        Мы всегда в поиске новых знаний и технологий, чтобы предлагать нашим клиентам самые современные и эффективные решения.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Миссия -->
+        <section id="mission">
+            <h2>Наша Миссия</h2>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p class="mission-title">Создание удобства и безопасности для каждого клиента</p>
+                    <p>Наша миссия заключается в том, чтобы обеспечить каждый дом, офис или бизнес современными и доступными технологиями, которые облегчают жизнь, повышают уровень безопасности и помогают экономить время. Мы стремимся внедрить системы, которые не только удобны, но и просты в использовании, чтобы каждый мог наслаждаться преимуществами умного дома без лишних усилий.</p>
+                </div>
+
+                <div class="mission-text">
+                    <p class="mission-title">Доступность и инновации для всех</p>
+                    <p>Мы уверены, что инновационные технологии должны быть доступны каждому. Мы работаем напрямую с производителями, что позволяет нам предложить вам самые конкурентоспособные цены на рынке. Наши решения делают умный дом не роскошью, а доступной реальностью для каждого, кто хочет улучшить качество своей жизни. Благодаря нашим технологиям, вы можете управлять всеми процессами в вашем доме, бизнесе или на участке с одного устройства, будь то телефон, планшет или компьютер.</p>
+                </div>
+
+                <div class="mission-text">
+                    <p class="mission-title">Устойчивое развитие и защита окружающей среды</p>
+                    <p>Мы заботимся не только о комфорте наших клиентов, но и об окружающей среде. Внедрение технологий, которые позволяют рационально использовать энергоресурсы, является важной частью нашей миссии. Мы предлагаем решения, которые помогают снизить энергозатраты, повысить энергоэффективность и внести вклад в улучшение экологической ситуации.</p>
+                </div>
+
+                <div class="mission-text">
+                    <p class="mission-title">Постоянное развитие и обучение</p>
+                    <p>Мы не останавливаемся на достигнутом. Наши специалисты постоянно обучаются, осваивают новейшие технологии и внедряют их в проекты, чтобы наши клиенты всегда получали самое лучшее. Мы стремимся развивать наш потенциал и становиться лидерами в области автоматизации, предлагая высококачественные и инновационные решения, которые соответствуют мировым стандартам.</p>
+                </div>
+
+                <div class="mission-text">
+                    <p class="mission-title">Честность и прозрачность</p>
+                    <p>Мы ценим доверие наших клиентов и придерживаемся принципов честности и прозрачности в работе. Мы всегда открыты для общения, готовы ответить на любые вопросы и предоставить всю необходимую информацию. В нашей компании нет скрытых условий или дополнительных расходов – все решения принимаются в интересах наших клиентов, и мы гарантируем качество каждого проекта.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 IQ Haven - Все права защищены</p>
+    </footer>
+</body>
+</html>
+

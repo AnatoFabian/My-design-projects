@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Haven - Мы скоро запустимся!</title>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'Century Gothic';
+            src: url('fonts/CenturyGothic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Century Gothic', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            background-color: #000;
+        }
+        .container {
+            text-align: center;
+            padding-top: 15px;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .slogan {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .coming-soon {
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .development {
+			font-size: 55px;
+			color: #ffc100;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+        .languages {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding-bottom: 100px;
+        }
+        .language-button {
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #fefefe;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .language-button img {
+            width: 20px;
+            height: 14px;
+        }
+        .language-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+		/* Адаптивные стили */
+        @media (max-width: 768px) {
+            .coming-soon {
+                font-size: 28px;
+            }
+            .slogan {
+                font-size: 20px;
+            }
+            .development {
+                font-size: 16px;
+            }
+            .language-button {
+                font-size: 12px;
+                padding: 6px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon {
+                font-size: 24px;
+            }
+            .slogan {
+                font-size: 18px;
+            }
+            .development {
+                font-size: 14px;
+            }
+            .language-button {
+                font-size: 10px;
+                padding: 4px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="languages">
+            <button class="language-button" onclick="setLanguage('ru')">
+                <img src="images/ru.png" alt="Русский">
+                Русский
+            </button>
+            <button class="language-button" onclick="setLanguage('en')">
+                <img src="images/us.png" alt="English">
+                English
+            </button>
+            <button class="language-button" onclick="setLanguage('kk')">
+                <img src="images/kz.png" alt="Қазақша">
+                Қазақша
+            </button>
+            <button class="language-button" onclick="setLanguage('zh')">
+                <img src="images/cn.png" alt="中文">
+                中文
+            </button>
+        </div>
+        <div class="main">
+            <img src="images/logo.png" alt="IQ Haven Logo" class="logo">
+            <div class="slogan" id="slogan">Уютное интеллектуальное пространство</div>
+            <div class="development" id="development">Сайт в разработке</div>
+            <div class="coming-soon" id="coming-soon">Мы скоро запустимся!</div>
+        </div>
+    </div>
+    <script>
+        const translations = {
+            ru: {
+                slogan: "Уютное интеллектуальное пространство",
+                comingSoon: "Мы скоро запустимся!",
+                development: "Сайт в разработке"
+            },
+            en: {
+                slogan: "Cozy Intellectual Space",
+                comingSoon: "We're launching soon!",
+                development: "Site Under Development"
+            },
+            kk: {
+                slogan: "Ыңғайлы интеллектуалды кеңістік",
+                comingSoon: "Біз жақында іске қосыламыз!",
+                development: "Сайт әзірленуде"
+            },
+            zh: {
+                slogan: "舒适的智慧空间",
+                comingSoon: "我们即将上线！",
+                development: "网站开发中"
+            }
+        };
+
+        function setLanguage(lang) {
+            const slogan = document.getElementById("slogan");
+            const comingSoon = document.getElementById("coming-soon");
+            const development = document.getElementById("development");
+
+            slogan.textContent = translations[lang].slogan;
+            comingSoon.textContent = translations[lang].comingSoon;
+            development.textContent = translations[lang].development;
+        }
+		
+        // Установить язык по умолчанию на английский
+        setLanguage('en');
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мы в городах</title>
+    <style>
+        /* Стили для карты */
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        /* Стили для заголовка */
+        .page-title {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-title">
+        <h1>Мы в городах</h1>
+        <p>Наши офисы и филиалы по всему миру</p>
+    </div>
+
+    <!-- Место для карты -->
+    <div id="map"></div>
+
+    <!-- Подключение Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly" async></script>
+
+    <script>
+        function initMap() {
+            // Центр карты (например, координаты Казахстана)
+            const center = { lat: 51.1694, lng: 71.4491 }; // Центр Казахстана
+
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: center,
+            });
+
+            // Маркеры для офисов и филиалов
+            const locations = [
+                // Казахстан
+                { city: 'Тараз', lat: 42.9034, lng: 71.3022 },
+                { city: 'Алматы', lat: 43.2220, lng: 76.8512 },
+                { city: 'Шымкент', lat: 42.3417, lng: 69.5901 },
+                { city: 'Астана', lat: 51.1694, lng: 71.4491 },
+                { city: 'Костанай', lat: 53.2141, lng: 63.6267 },
+
+                // Россия
+                { city: 'Москва', lat: 55.7558, lng: 37.6173 },
+                { city: 'Санкт-Петербург', lat: 59.9343, lng: 30.3351 },
+                { city: 'Грозный', lat: 43.3178, lng: 45.6980 },
+                { city: 'Сочи', lat: 43.5853, lng: 39.7203 },
+                { city: 'Краснодар', lat: 45.0355, lng: 38.9753 },
+                { city: 'Владикавказ', lat: 43.0228, lng: 44.6768 },
+
+                // Канада
+                { city: 'Торонто', lat: 43.65107, lng: -79.347015 },
+                { city: 'Монреаль', lat: 45.5017, lng: -73.5673 },
+                { city: 'Саскачеван', lat: 52.9399, lng: -106.4509 },
+            ];
+
+            // Добавление маркеров на карту
+            locations.forEach(function(location) {
+                const marker = new google.maps.Marker({
+                    position: { lat: location.lat, lng: location.lng },
+                    map: map,
+                    title: location.city,
+                });
+            });
+        }
+    </script>
+</body>
+</html>

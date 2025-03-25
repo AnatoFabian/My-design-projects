@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Haven - Уютное интеллектуальное пространство</title>
+    <style>
+        @font-face {
+            font-family: 'Century Gothic';
+            src: url('fonts/CenturyGothic.ttf') format('truetype');
+        }
+        body {
+            margin: 0;
+            font-family: 'Century Gothic', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        section {
+            padding: 50px 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: relative;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>IQ Haven</h1>
+        <p>Уютное интеллектуальное пространство</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#welcome">Главная</a>
+        <a href="#what-is-smart-home">Что такое умный дом?</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="#products">Продукты/Услуги</a>
+        <a href="#reviews">Отзывы клиентов</a>
+        <a href="#contact">Связаться с нами</a>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="welcome" style="background: url('images/smart-home-bg.jpg') no-repeat center center/cover; color: white;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h1>Добро пожаловать в IQ Haven!</h1>
+            <p>Мы создаем уютное интеллектуальное пространство, которое облегчает вашу повседневную жизнь и делает ее комфортнее.</p>
+            <h2>Уютное интеллектуальное пространство</h2>
+            <button onclick="scrollToSection('what-is-smart-home')">Узнать больше</button>
+        </div>
+    </section>
+
+    <!-- What is Smart Home Section -->
+    <section id="what-is-smart-home">
+        <h2>Что такое умный дом?</h2>
+        <p>Умный дом — это система, которая позволяет автоматизировать управление освещением, безопасностью, климатом и другими функциями вашего дома или бизнеса.</p>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" style="background-color: #f0f0f0;">
+        <h2>Преимущества</h2>
+        <ul>
+            <li>Удобство управления всеми системами дома</li>
+            <li>Экономия энергии</li>
+            <li>Повышение безопасности</li>
+            <li>Создание комфортных условий</li>
+        </ul>
+    </section>
+
+    <!-- Products/Services Section -->
+    <section id="products">
+        <h2>Продукты/Услуги</h2>
+        <p>Мы предлагаем монтаж систем, продажу готовых решений и обучение для всех уровней пользователей.</p>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" style="background-color: #f9f9f9;">
+        <h2>Отзывы клиентов</h2>
+        <blockquote>"IQ Haven сделал мой дом по-настоящему умным. Я больше не представляю жизнь без этой системы!"</blockquote>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Связаться с нами</h2>
+        <p>Телефон: +7 (708) 657 8345</p>
+        <p>Email: info@iq-haven.com</p>
+        <form>
+            <label for="name">Имя:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="message">Сообщение:</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 IQ Haven. Все права защищены.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
