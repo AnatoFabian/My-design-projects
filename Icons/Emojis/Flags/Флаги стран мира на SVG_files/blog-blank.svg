@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="750" height="300" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 19843.76 7937.5"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="722" font-variant="normal" style="fill-rule:nonzero" font-weight="700">
+	<font-face 
+		font-family="verdana">
+		<font-face-src>
+			<font-face-name name="verdana"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="А" horiz-adv-x="722" d="M717.999 0l-156.166 0 -61.8331 162.999 -287.167 0 -59.4998 -162.999 -153.333 0 278.001 715.999 153.166 0 286.832 -715.999zm-264.999 284.001l-99.4997 264.999 -96.6664 -264.999 196.166 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"verdana";font-variant:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .fil1 {fill:#FFFFFF}
+    .fil0 {fill:#337AB7}
+    .fil2 {fill:url(#id0)}
+    .fnt0 {font-weight:bold;font-size:4300.02px;font-family:'verdana'}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse">
+   <stop offset="1" style="stop-opacity:1; stop-color:#337AB7"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <rect class="fil0" x="-0.01" width="20000" height="8000"/>
+  <ellipse class="fil1" cx="10000" cy="4000" rx="2500" ry="2500"/>
+  <text x="8325" y="5380"  class="fil2 fnt0">А</text>
+ </g>
+</svg>
