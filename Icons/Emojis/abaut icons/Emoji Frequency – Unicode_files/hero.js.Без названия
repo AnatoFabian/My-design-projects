@@ -1,0 +1,28 @@
+$j = jQuery.noConflict();
+
+function resizeGrid($) {
+  $('.character').each(function() {
+    $(this).css('height', function() {
+      $(this).css('animationName', 'FadeIn', 'important');
+      $(this).css('animationDuration', '500ms', 'important');
+      $(this).css('animationFillMode', 'forwards', 'important');
+      return ($(this).width() + 14) + 'px'
+    }).css('padding-bottom', 0, 'important')
+  })
+}
+
+$j(function($) {
+  var browsers = /Waterfox|SeaMonkey/i
+  if (navigator.userAgent.match(browsers) || $('.character').outerHeight() > 640) {
+    resizeGrid($);
+    $(window).resize(function() {
+      resizeGrid($);
+    });
+  }
+})
+
+$j(function($) {
+  $('.fancybox').click(function(e) {
+    e.preventDefault()
+  })
+})

@@ -1,0 +1,7 @@
+.character {
+  padding-bottom: 100%;
+  animation-name: FadeIn;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  transition: opacity 300ms ease;
+}

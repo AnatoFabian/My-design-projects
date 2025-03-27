@@ -1,0 +1,28 @@
+$j = jQuery.noConflict();
+
+$j(function($) {
+  $('.fusion-open-submenu').click(function() {
+    $(this).find(' + ul').toggleClass('show')
+  })
+    $('.sub-menu').addClass(function() {
+      if ($(this).parent().hasClass('current-menu-parent') || $(this).parent().hasClass('current_page_item')) {
+        return 'show'
+      }
+    });
+    $('.sub-menu a').click(function() {
+      event.stopPropagation();
+    })
+    $('.fusion-dropdown-menu:not(.sub-menu)').click(function() {
+      $('.fusion-dropdown-menu').not($(this)).find('.sub-menu').removeClass('show');
+      $(this).find('.sub-menu').toggleClass('show');
+
+      if (!$(this).find('.sub-menu').hasClass('show') || $(this).attr('href') === '#') {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      }
+    })
+    $('.fusion-dropdown-menu:not(.sub-menu) > a').click(function() {
+      event.preventDefault();
+    })
+})
