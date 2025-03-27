@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="29.3356mm" height="33.8834mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 394 456"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil3 {fill:#2A1304}
+    .fil0 {fill:#2C3D51}
+    .fil1 {fill:#FFBD2D}
+    .fil4 {fill:white}
+    .fil2 {fill:white;fill-opacity:0.301961}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2537602973392">
+   <path class="fil0" d="M21 241c-12,-4 -21,-16 -21,-30 0,-14 10,-27 24,-30 18,-79 89,-137 173,-137 83,0 154,58 172,136 14,3 25,16 25,31 0,15 -9,27 -22,31 -3,32 -16,61 -34,86l0 0c0,0 17,5 -2,128 0,0 -10,-50 -90,-65l0 0c-15,4 -32,7 -49,7 -91,0 -166,-69 -176,-157z"/>
+   <circle class="fil1" cx="197" cy="221" r="157"/>
+   <path class="fil2" d="M197 63c67,0 125,43 147,103 -39,44 -91,71 -147,71 -57,0 -109,-27 -148,-71 22,-60 80,-103 148,-103z"/>
+   <path class="fil0" d="M48 50c13,0 23,10 23,23 0,13 -10,23 -23,23 -13,0 -23,-10 -23,-23 0,-13 10,-23 23,-23zm221 -28c1,0 3,1 3,3 0,2 -2,3 -3,3 -2,0 -4,-1 -4,-3 0,-2 2,-3 4,-3zm-18 -8c2,0 4,2 4,4 0,3 -2,5 -4,5 -3,0 -5,-2 -5,-5 0,-2 2,-4 5,-4zm-22 -8c3,0 6,3 6,7 0,4 -3,7 -6,7 -4,0 -7,-3 -7,-7 0,-4 3,-7 7,-7zm-26 -5c5,0 10,4 10,10 0,5 -5,9 -10,9 -5,0 -10,-4 -10,-9 0,-6 5,-10 10,-10zm-33 -1c7,0 13,6 13,13 0,7 -6,12 -13,12 -7,0 -13,-5 -13,-12 0,-7 6,-13 13,-13zm-39 4c9,0 17,8 17,17 0,9 -8,17 -17,17 -10,0 -17,-8 -17,-17 0,-9 7,-17 17,-17zm-40 16c11,0 20,9 20,19 0,11 -9,20 -20,20 -11,0 -20,-9 -20,-20 0,-10 9,-19 20,-19z"/>
+   <g>
+    <circle class="fil3" cx="121" cy="150" r="33"/>
+    <circle class="fil4" cx="121" cy="142" r="15"/>
+    <circle class="fil3" cx="272" cy="150" r="33"/>
+    <circle class="fil4" cx="272" cy="142" r="15"/>
+   </g>
+   <circle class="fil3" cx="197" cy="310" r="46"/>
+  </g>
+ </g>
+</svg>

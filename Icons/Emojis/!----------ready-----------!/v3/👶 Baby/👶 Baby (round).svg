@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="29.3356mm" height="33.8834mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 484 559"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil9 {fill:black}
+    .fil3 {fill:#2A1304}
+    .fil0 {fill:#2C3D51}
+    .fil10 {fill:#333333}
+    .fil6 {fill:#6F4104}
+    .fil11 {fill:gray}
+    .fil12 {fill:#CCCCCC}
+    .fil8 {fill:#E99718}
+    .fil4 {fill:#FC8891}
+    .fil1 {fill:#FFBD2D}
+    .fil5 {fill:#FFD94C}
+    .fil7 {fill:white}
+    .fil2 {fill:white;fill-opacity:0.301961}
+   ]]>
+  </style>
+     <mask id="id0">
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="239.986" y1="360.69" x2="241.589" y2="304.764">
+   <stop offset="0" style="stop-opacity:0; stop-color:white"/>
+   <stop offset="0.639216" style="stop-opacity:-127.502; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:white"/>
+  </linearGradient>
+      <rect style="fill:url(#id1)" x="205" y="327" width="71.4075" height="29.0707"/>
+     </mask>
+     <mask id="id2">
+  <radialGradient id="id3" gradientUnits="userSpaceOnUse" cx="266.587" cy="333.011" r="44.082" fx="266.587" fy="333.011">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.129412" style="stop-opacity:-127.502; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:white"/>
+  </radialGradient>
+      <rect style="fill:url(#id3)" x="221" y="313" width="39.5044" height="18.713"/>
+     </mask>
+    <mask id="id4">
+  <radialGradient id="id5" gradientUnits="userSpaceOnUse" cx="340.748" cy="205.93" r="27.0599" fx="340.748" fy="205.93">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.258824" style="stop-opacity:-127.502; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:white"/>
+  </radialGradient>
+     <rect style="fill:url(#id5)" x="312" y="177" width="23.3566" height="23.3549"/>
+    </mask>
+    <mask id="id6">
+  <radialGradient id="id7" gradientUnits="userSpaceOnUse" cx="175.601" cy="205.93" r="27.0599" fx="175.601" fy="205.93">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.258824" style="stop-opacity:-127.502; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:white"/>
+  </radialGradient>
+     <rect style="fill:url(#id7)" x="147" y="177" width="23.3549" height="23.3549"/>
+    </mask>
+     <clipPath id="id8">
+      <path d="M290 51l83 0 0 81 -83 0 0 -81z"/>
+     </clipPath>
+     <clipPath id="id9">
+      <path d="M119 37l208 0 0 118 -208 0 0 -118z"/>
+     </clipPath>
+     <clipPath id="id10">
+      <path d="M225 72l55 0 0 48 -55 0 0 -48z"/>
+     </clipPath>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2537603017936">
+   <path class="fil0" d="M25 296c-14,-6 -25,-20 -25,-37 0,-18 13,-33 30,-37 22,-97 108,-168 211,-168 103,0 189,71 212,167 17,4 31,20 31,38 0,18 -11,32 -27,37 -5,40 -20,76 -43,106l0 0c0,0 21,6 -2,157 0,0 -12,-61 -110,-80l0 0c-19,6 -40,9 -61,9 -111,0 -203,-84 -216,-192z"/>
+   <circle class="fil1" cx="241" cy="271" r="193"/>
+   <path class="fil2" d="M241 78c83,0 154,52 181,126 -48,54 -111,87 -181,87 -69,0 -133,-33 -181,-87 27,-74 98,-126 181,-126z"/>
+   <path class="fil0" d="M59 61c15,0 28,13 28,29 0,15 -13,28 -28,28 -16,0 -28,-13 -28,-28 0,-16 12,-29 28,-29zm271 -34c2,0 3,1 3,4 0,2 -1,3 -3,3 -3,0 -4,-1 -4,-3 0,-3 1,-4 4,-4zm-22 -10c3,0 5,2 5,5 0,3 -2,6 -5,6 -3,0 -6,-3 -6,-6 0,-3 3,-5 6,-5zm-28 -9c5,0 9,3 9,8 0,5 -4,8 -9,8 -4,0 -8,-3 -8,-8 0,-5 4,-8 8,-8zm-31 -7c7,0 12,5 12,12 0,7 -5,12 -12,12 -7,0 -12,-5 -12,-12 0,-7 5,-12 12,-12zm-40 -1c8,0 15,7 15,16 0,8 -7,15 -15,15 -9,0 -16,-7 -16,-15 0,-9 7,-16 16,-16zm-49 5c12,0 21,9 21,21 0,11 -9,21 -21,21 -11,0 -20,-10 -20,-21 0,-12 9,-21 20,-21zm-48 19c13,0 24,11 24,24 0,14 -11,24 -24,24 -14,0 -24,-10 -24,-24 0,-13 10,-24 24,-24z"/>
+   <g>
+    <path class="fil3" d="M311 375c-5,33 -35,58 -71,58 -36,0 -66,-25 -72,-58 24,0 48,6 71,6 24,0 49,-6 72,-6z"/>
+    <ellipse class="fil4" cx="240" cy="413" rx="39" ry="13"/>
+    <ellipse class="fil5" cx="241" cy="333" rx="34" ry="22"/>
+    <path class="fil6" style="mask:url(#id0)" d="M274 328c0,2 1,3 1,5 0,12 -16,21 -34,21 -19,0 -34,-9 -34,-21 0,-2 0,-3 0,-5 4,10 18,16 34,16 15,0 29,-6 33,-16z"/>
+    <path class="fil7" style="mask:url(#id2)" d="M241 314c10,0 18,4 18,8 0,4 -8,8 -18,8 -10,0 -18,-4 -18,-8 0,-4 8,-8 18,-8z"/>
+   </g>
+   <path class="fil7" d="M331 160c23,0 49,22 49,45 0,24 -26,41 -49,41 -24,0 -51,-12 -51,-35 0,-24 27,-51 51,-51z"/>
+   <circle class="fil8" cx="330" cy="203" r="33"/>
+   <circle class="fil9" cx="330" cy="203" r="16"/>
+   <path class="fil7" style="mask:url(#id4)" d="M324 179c5,0 10,4 10,10 0,5 -5,10 -10,10 -6,0 -10,-5 -10,-10 0,-6 4,-10 10,-10z"/>
+   <path class="fil7" d="M152 160c-24,0 -49,22 -49,45 0,24 25,41 49,41 24,0 50,-12 50,-35 0,-24 -26,-51 -50,-51z"/>
+   <circle class="fil8" cx="152" cy="203" r="33"/>
+   <circle class="fil9" cx="152" cy="203" r="16"/>
+   <path class="fil7" style="mask:url(#id6)" d="M159 179c-6,0 -10,4 -10,10 0,5 4,10 10,10 5,0 10,-5 10,-10 0,-6 -5,-10 -10,-10z"/>
+   <path class="fil6" d="M358 136c0,1 1,2 1,3 0,2 -2,4 -4,4 -1,0 -2,-1 -3,-1 -19,-11 -27,-9 -43,1 -1,0 -2,1 -3,1 -3,0 -5,-3 -5,-6 0,-10 36,-26 57,-2z"/>
+   <path class="fil6" d="M125 136c-1,1 -1,2 -1,3 0,2 1,4 3,4 1,0 2,-1 3,-1 19,-11 27,-9 43,1 1,0 2,1 3,1 3,0 5,-3 5,-6 0,-10 -36,-26 -56,-2z"/>
+   <g>
+    <g style="clip-path:url(#id8)">
+     <image x="290" y="51" width="83.7613" height="81.1912" xlink:href="👶 Baby (round)_Images\👶 Baby (round)_ImgID1.png"/>
+    </g>
+   </g>
+   <path class="fil10" d="M370 127l-48 -32 0 -3c0,-5 -1,-9 -2,-13 -5,-14 -20,-25 -32,-32l0 0c0,0 79,22 82,80z"/>
+   <g>
+    <g style="clip-path:url(#id9)">
+     <image x="119" y="37" width="209" height="118" xlink:href="👶 Baby (round)_Images\👶 Baby (round)_ImgID2.png"/>
+    </g>
+   </g>
+   <path class="fil11" d="M116 124c27,-13 52,-40 107,-45 0,0 49,-3 53,8 0,0 17,25 -12,38 -30,12 -59,-5 -59,-5 0,0 21,34 57,30 35,-3 45,-18 45,-18 0,0 21,-30 13,-53 -9,-24 -46,-39 -46,-39 0,0 -32,-15 -80,8 -48,23 -81,60 -78,76zm112 -48c0,0 0,0 0,0 0,0 0,0 0,0zm1 0c0,0 0,0 0,0 0,0 0,0 0,0zm1 0c0,0 0,0 0,0 0,0 0,0 0,0zm0 0c1,0 1,1 1,1 0,0 0,-1 -1,-1zm1 1c1,0 1,0 1,0 0,0 0,0 -1,0zm1 0c0,0 1,0 1,0 0,0 -1,0 -1,0zm1 0c0,0 1,1 1,1 0,0 -1,-1 -1,-1zm1 1c0,0 0,0 1,0 -1,0 -1,0 -1,0zm1 0c0,0 0,0 0,0 0,0 0,0 0,0zm0 1c1,0 1,0 1,0 0,0 0,0 -1,0zm1 0c0,0 1,0 1,0 0,0 -1,0 -1,0zm1 0c0,1 0,1 0,1 0,0 0,0 0,-1zm0 1c1,0 1,0 1,1 0,-1 0,-1 -1,-1zm1 1c0,0 0,0 1,0 -1,0 -1,0 -1,0zm1 0c0,0 0,1 0,1 0,0 0,-1 0,-1zm0 1c0,0 0,0 1,1 -1,-1 -1,-1 -1,-1zm1 1c0,0 0,0 0,0 0,0 0,0 0,0zm0 0c0,1 0,1 0,1 0,0 0,0 0,-1zm0 1c1,0 1,1 1,1 0,0 0,-1 -1,-1zm1 1c0,0 0,1 0,1 0,0 0,-1 0,-1zm0 1c0,0 0,0 0,1 0,-1 0,-1 0,-1zm0 1c0,0 0,0 0,1 0,-1 0,-1 0,-1zm0 1c0,0 0,0 0,1 0,-1 0,-1 0,-1zm1 1c0,0 0,0 0,1 0,-1 0,-1 0,-1zm0 1c0,0 0,1 -1,1 1,0 1,-1 1,-1z"/>
+   <g>
+    <g style="clip-path:url(#id10)">
+     <image x="225" y="72" width="55.0238" height="48.0328" xlink:href="👶 Baby (round)_Images\👶 Baby (round)_ImgID3.png"/>
+    </g>
+   </g>
+   <path class="fil12" d="M222 79c4,0 9,-1 12,-1 5,1 8,2 7,13 -1,18 -7,24 -7,24 0,0 19,9 32,-7 12,-15 10,-20 10,-21l0 0 0 0c-10,-19 -36,-22 -54,-8z"/>
+  </g>
+ </g>
+</svg>

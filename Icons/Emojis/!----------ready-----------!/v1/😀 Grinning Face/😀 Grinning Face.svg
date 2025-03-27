@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="31.564mm" height="35.6728mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 848 958"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil3 {fill:#2A1304}
+    .fil0 {fill:#2C3D51}
+    .fil5 {fill:#611204}
+    .fil6 {fill:#F65D72}
+    .fil1 {fill:#FEC12B}
+    .fil4 {fill:white}
+    .fil2 {fill:white;fill-opacity:0.301961}
+   ]]>
+  </style>
+    <mask id="id0">
+  <radialGradient id="id1" gradientUnits="userSpaceOnUse" cx="293.007" cy="279.982" r="0" fx="293.007" fy="279.982">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:white"/>
+  </radialGradient>
+     <rect style="fill:url(#id1)" x="290" y="277" width="37.6437" height="37.6437"/>
+    </mask>
+    <mask id="id2">
+  <radialGradient id="id3" gradientUnits="userSpaceOnUse" cx="606.373" cy="279.982" r="0" fx="606.373" fy="279.982">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:white"/>
+  </radialGradient>
+     <rect style="fill:url(#id3)" x="604" y="277" width="37.6437" height="37.6437"/>
+    </mask>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2537603755200">
+   <path class="fil0" d="M0 146l0 20c1,1 1,2 2,3 1,5 3,9 6,13 1,2 3,5 7,8l0 0 0 0c7,7 17,11 28,11l0 0 0 0 0 0c23,1 45,-16 45,-42 1,-25 -17,-41 -36,-45l-1 0 0 0 -1 0 -1 0 0 0c-1,0 -1,0 -2,0l0 0 -1 0c-12,-1 -24,3 -33,13 -4,4 -7,8 -9,12l-3 6c0,-1 -1,1 -1,1zm91 217c-34,0 -61,27 -61,60 0,33 27,60 61,60 0,0 1,0 2,0l0 172c0,64 53,117 117,117l282 0c0,1 1,2 1,2 102,121 74,184 74,184 129,-145 109,-175 137,-190 6,-2 12,-4 18,-7l0 0 0 0c40,-19 67,-60 67,-106l0 -172c33,-1 59,-27 59,-60 0,-33 -26,-59 -59,-60l0 -172c0,-64 -53,-117 -117,-117l-462 0c-64,0 -117,53 -117,117l0 172c-1,0 -2,0 -2,0zm-25 -293c3,15 13,24 25,27 4,1 7,2 11,2 7,0 14,-2 20,-6 12,-7 21,-21 16,-40 -3,-14 -12,-22 -23,-25 -4,-2 -8,-3 -13,-3 -8,0 -16,3 -22,8 -11,7 -17,20 -14,37zm125 -70c16,0 29,13 29,29 0,17 -13,30 -29,30 -16,0 -29,-13 -29,-30 0,-16 13,-29 29,-29zm296 22c4,0 7,3 7,7 0,4 -3,7 -7,7 -4,0 -7,-3 -7,-7 0,-4 3,-7 7,-7zm-38 -3c6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 0,-5 5,-10 10,-10zm-49 -4c8,0 14,6 14,14 0,8 -6,15 -14,15 -8,0 -15,-7 -15,-15 0,-8 7,-14 15,-14zm-55 -3c10,0 18,8 18,17 0,10 -8,18 -18,18 -10,0 -17,-8 -17,-18 0,-9 7,-17 17,-17zm-69 -5c13,0 23,10 23,22 0,13 -10,23 -23,23 -12,0 -23,-10 -23,-23 0,-12 11,-22 23,-22z"/>
+   <rect class="fil1" x="136" y="118" width="609" height="611" rx="103" ry="19"/>
+   <path class="fil2" d="M239 118l404 0c56,0 103,46 103,103l0 135c-84,67 -190,107 -305,107 -115,0 -221,-40 -305,-107l0 -135c0,-57 47,-103 103,-103z"/>
+   <circle class="fil3" cx="284" cy="324" r="63"/>
+   <path class="fil4" style="mask:url(#id0)" d="M309 280c9,0 16,7 16,16 0,9 -7,16 -16,16 -9,0 -16,-7 -16,-16 0,-9 7,-16 16,-16z"/>
+   <circle class="fil3" cx="598" cy="324" r="63"/>
+   <path class="fil4" style="mask:url(#id2)" d="M623 280c8,0 16,7 16,16 0,9 -8,16 -16,16 -9,0 -17,-7 -17,-16 0,-9 8,-16 17,-16z"/>
+   <path class="fil5" d="M650 483c0,4 0,8 0,12 0,103 -93,187 -208,187 -114,0 -207,-84 -207,-187 0,-4 0,-8 0,-12 165,20 300,17 415,0z"/>
+   <path class="fil6" d="M581 634c-37,30 -86,48 -139,48 -53,0 -101,-18 -138,-48 16,-16 47,-28 84,-28 20,0 39,4 54,10 16,-6 35,-10 55,-10 37,0 68,12 84,28z"/>
+   <path class="fil4" d="M650 483c0,2 0,4 0,6l0 12c0,8 -1,16 -3,24 -6,17 -22,29 -40,29l-329 0c-18,0 -34,-12 -40,-28 -2,-10 -3,-20 -3,-31l0 0 0 0c0,-4 0,-8 0,-12 165,20 300,17 415,0z"/>
+  </g>
+ </g>
+</svg>
