@@ -12,21 +12,100 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <style>
-    body { background: #111; color: #f5f5f5; padding-bottom: 60px; }
+    /* Основной акцентный цвет */
+    :root {
+      --accent-color: #ed3237;
+    }
+    body {
+      background: #111;
+      color: #f5f5f5;
+      padding-bottom: 60px;
+      margin: 0;
+    }
+    /* Прелоадер на весь экран */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Обёртка для кольца и логотипа */
+.preloader-circle {
+  position: relative;
+  width: 350px; /* Общая ширина */
+  height: 350px; /* и высота */
+}
+
+/* Кольцо, заполняемое цветом */
+.progress-ring {
+  position: absolute;
+  top: 0; left: 0;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: conic-gradient(#222 0deg, #222 360deg);
+  /* Начальное состояние – пустое кольцо */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Текст в центре кольца */
+.progress-text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Логотип поверх кольца, в центре */
+.logo-preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Дополнительно можно настроить анимацию логотипа, если нужно */
+
+    /* Верхняя панель (iPhone notch стиль) */
     .top-bar {
       position: fixed;
       top: 0;
-      width: 100%;
-      background: #222;
-      padding: 10px;
+      width: 90%;
+      background: var(--accent-color);
+      padding: 2px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      align-items: flex-start;
       z-index: 1000;
-      border-bottom: 1px solid #444;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      margin: 0 15px 15px 15px;
+      flex-wrap: nowrap;
+      flex-direction: row-reverse;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    .logo { width: 50px; height: 50px; border-radius: 50%; }
-    .view-toggle button { margin-left: 5px; }
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .view-toggle button {
+      margin-left: 5px;
+      background-color: var(--accent-color) !important;
+      border: none;
+      color: #fff !important;
+    }
+    /* Нижнее меню с корзиной: сумма и количество */
     .bottom-menu {
       position: fixed;
       bottom: 0;
@@ -42,9 +121,50 @@
       text-align: center;
       color: #f5f5f5;
       cursor: pointer;
+      position: relative;
     }
-    .bottom-menu .menu-item i { font-size: 24px; }
-    .menu-list { padding-top: 80px; }
+    .bottom-menu .menu-item i {
+      font-size: 24px;
+      color: var(--accent-color);
+    }
+    /* Отображение количества товаров и суммы в корзине */
+    .cart-info {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: var(--accent-color);
+      color: #fff;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    }
+    .cart-total {
+      position: absolute;
+      bottom: 0px;
+      right: 50px;
+      background: var(--accent-color);
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+	.cart-totalleft {
+    position: relative;
+    bottom: 0px;
+    right: 50px;
+    background: var(--accent-color);
+    padding: 16px 35px;
+    /* border-radius: 5px; */
+    font-size: 12px;
+    left: -175px;
+}
+    /* Стили для списка меню */
+    .menu-list {
+      padding-top: 10px;
+    }
     .menu-category {
       margin-top: 20px;
       padding: 10px;
@@ -55,10 +175,12 @@
       border-bottom: 1px solid #444;
       padding-bottom: 5px;
       margin-bottom: 10px;
+      text-align: center;
+      color: var(--accent-color);
     }
     /* Обёртка для элементов меню */
-    .menu-items-wrapper { }
-    /* Стили для строчного вида */
+    .menu-items-wrapper {}
+    /* Строчный вид */
     .list-view .menu-category .menu-item {
       border-bottom: 1px solid #444;
       padding-bottom: 10px;
@@ -70,7 +192,7 @@
       border: 2px solid #888;
       margin-right: 15px;
     }
-    /* Стили для блочного вида: CSS Grid с двумя колонками */
+    /* Блочный вид (CSS Grid, 2 колонки) */
     .grid-view .menu-items-wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -89,21 +211,156 @@
       border: 2px solid #888;
       margin-bottom: 10px;
     }
-    .btn-primary { background: #ffcc00; border: none; color: #222; }
-    .btn-success { background: #ff6600; border: none; }
+    /* Кнопка добавления товара (под описанием товара) */
+    .add-to-cart-btn {
+      width: 100%;
+      margin-top: 10px;
+      background: var(--accent-color);
+      border: none;
+      padding: 10px;
+      color: #fff;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .add-to-cart-btn i {
+      font-size: 20px;
+    }
+    /* Стили для счетчика +/- (размещаем: слева - минус, справа - плюс) */
+    .qty-controls {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 5px;
+    }
+    .qty-controls button {
+      background: none;
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      font-size: 18px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .qty-controls .qtyVal {
+      min-width: 20px;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+    }
+    /* Заголовок меню, разделитель и сортировка */
+    .container-menu {
+      display: inline-flex;
+      align-content: center;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin: 0 30px;
+    }
+    .menu-header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: var(--accent-color);
+    }
+    .divider {
+      height: 1px;
+      background: #444;
+      margin: 15px;
+      width: 155px;
+    }
+    .sort-section {
+      text-align: center;
+    }
+    .sort-section i {
+      font-size: 24px;
+      margin: 0 10px;
+      cursor: pointer;
+      color: var(--accent-color);
+    }
+    /* Акционные баннеры с фиксированным размером */
+    .promo-banner {
+      width: 100%;
+      height: 180px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 15px auto;
+      position: relative;
+      background: #222;
+    }
+    .promo-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .promo-button {
+      position: absolute;
+      bottom: 10px;
+      right: 25%;
+      transform: translateX(-50%);
+      background-color: var(--accent-color);
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    /* Изображения товаров (rounded-circle) с фиксированными размерами */
+    img.rounded-circle {
+      width: 175px;
+      height: 175px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    /* Popup для просмотра изображения */
+    #imagePopup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #000;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1200;
+      text-align: center;
+    }
+    #imagePopup img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
+    #imagePopup .popup-close {
+      margin-top: 10px;
+      background: #ff6600;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    /* Общие popup окна */
     .popup {
       display: none;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: #222;
+      background: #000;
       padding: 20px;
       border-radius: 10px;
       z-index: 1100;
       color: #f5f5f5;
+      border: 5px solid var(--accent-color);
+      width: 95%;
+      height: 95%;
     }
-    .popup img { max-width: 100%; border-radius: 10px; }
+    .popup img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
     .popup-close {
       background: #ff6600;
       border: none;
@@ -111,81 +368,202 @@
       cursor: pointer;
       margin-top: 10px;
     }
+    /* Слайдер (Bootstrap Carousel) для акционных баннеров */
+    .carousel-item img {
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: var(--accent-color);
+      background-size: 80% 80%;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 3px rgba(0,0,0,0.7));
+    }
   </style>
 </head>
 <body>
+  <!-- Прелоадер -->
+  <!-- Прелоадер (круговая шкала загрузки) -->
+	<div id="preloader">
+	</br>
+	  <div class="preloader-circle">
+		<div class="progress-ring" id="progressRing">
+		  <div class="progress-text" id="progressValue">0%</div>
+		</div>
+		<img src="images/logo.png" alt="Logo" class="logo-preloader">
+	  </div>
+	</div>
+
+
+  <!-- Верхняя панель (iPhone notch) -->
   <div class="top-bar">
     <img src="images/logo.png" alt="DAIKON SUSHI" class="logo">
-    <div class="view-toggle">
-      <!-- Используем бесплатные иконки FontAwesome для переключения вида -->
-      <button class="btn btn-primary" id="listViewBtn" title="Строчный вид">
-        <i class="fa-solid fa-list"></i>
-      </button>
-      <button class="btn btn-primary" id="gridViewBtn" title="Блочный вид">
-        <i class="fa-solid fa-grid-2"></i>
-      </button>
-    </div>
+      <div class="cart-info" id="cartCount">0</div>
+
+
   </div>
-  
+
+  <!-- Слайдер (Bootstrap Carousel) для акционных баннеров -->
   <div class="container mt-5 pt-5">
-    <div id="promoSlider" class="carousel slide" data-bs-ride="carousel" onclick="openPopup('promoPopup')">
+    <div id="promoSlider" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="images/akcii/1.png" class="d-block w-100" alt="Акция 1">
+          <div class="promo-banner" onclick="openPopup('promoPopup')">
+            <img src="images/akcii/1.png" alt="Акция 1">
+            <button class="promo-button">Узнать больше</button>
+          </div>
         </div>
         <div class="carousel-item">
-          <img src="images/akcii/1.png" class="d-block w-100" alt="Акция 2">
+          <div class="promo-banner" onclick="openPopup('promoPopup')">
+            <img src="images/akcii/2.png" alt="Акция 2">
+            <button class="promo-button">Узнать больше</button>
+          </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#promoSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Предыдущий</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#promoSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Следующий</span>
+      </button>
     </div>
   </div>
-  
+
+  <!-- Popup для просмотра изображения -->
+  <div id="imagePopup">
+    <img id="imagePopupImg" src="" alt="Просмотр изображения">
+    <br>
+    <button class="popup-close" onclick="closePopup('imagePopup')">Закрыть</button>
+  </div>
+
+  <!-- Заголовок меню, разделитель и сортировка -->
+  <div class="container-menu">
+    <div class="menu-header">Меню</div>
+    <div class="divider"></div>
+    <div class="sort-section">
+      <i class="fa-solid fa-grip" title="Блочный вид" onclick="$('#menuContainer').removeClass('list-view').addClass('grid-view');"></i>
+      <i class="fa-solid fa-list" title="Строчный вид" onclick="$('#menuContainer').removeClass('grid-view').addClass('list-view');"></i>
+    </div>
+  </div>
+
   <!-- Контейнер меню -->
   <div class="container menu-list list-view" id="menuContainer">
+    <!-- Категория: СУШИ -->
     <div class="menu-category">
-      <h4>Суши и роллы</h4>
+      <div>
+        <h4 class="items-name">СУШИ - 1 шт</h4>
+      </div>
       <div class="menu-items-wrapper">
         <div class="menu-item">
-          <img src="sushi.jpg" class="rounded-circle" width="80" alt="Филадельфия">
+          <img src="images/sushi/Сяке.jpg" class="rounded-circle" alt="Сяке" onclick="openImagePopup(this.src)">
           <div>
-            <h5>Филадельфия</h5>
-            <p>Лосось, сливочный сыр</p>
-            <p>Цена: 2000 тг</p>
-            <button class="btn btn-success">Добавить в корзину</button>
+            <h5>Сяке</h5>
+            <p>Свежий лосось, идеальный вкус и полезные свойства.</p>
+            <p>Цена: 600 тг</p>
+            <button class="add-to-cart-btn" onclick="addToCartCustom('Суши 1шт - Сяке',600, this)">
+              <span class="btn-text">Добавить в корзину</span>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <div class="qty-controls">
+              <button onclick="decrementQty(this)">-</button>
+              <span class="qtyVal">1</span>
+              <button onclick="incrementQty(this)">+</button>
+            </div>
           </div>
         </div>
         <div class="menu-item">
-          <img src="rolls.jpg" class="rounded-circle" width="80" alt="Роллы">
+          <img src="images/sushi/Кани.jpg" class="rounded-circle" alt="Кани" onclick="openImagePopup(this.src)">
           <div>
-            <h5>Роллы</h5>
-            <p>Свежие ингредиенты</p>
-            <p>Цена: 2200 тг</p>
-            <button class="btn btn-success">Добавить в корзину</button>
+            <h5>Кани</h5>
+            <p>Нежное мясо краба, изысканный вкус, идеально для гурманов.</p>
+            <p>Цена: 600 тг</p>
+            <button class="add-to-cart-btn" onclick="addToCartCustom('Суши 1шт - Кани',600, this)">
+              <span class="btn-text">Добавить в корзину</span>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <div class="qty-controls">
+              <button onclick="decrementQty(this)">-</button>
+              <span class="qtyVal">1</span>
+              <button onclick="incrementQty(this)">+</button>
+            </div>
           </div>
         </div>
-        <!-- Добавьте ещё элементы по необходимости -->
+      </div>
+    </div>
+    <!-- Категория: МАКИ -->
+    <div class="menu-category">
+      <div>
+        <h4 class="items-name">МАКИ</h4>
+      </div>
+      <div class="menu-items-wrapper">
+        <div class="menu-item">
+          <img src="images/sushi/Динамит.jpg" class="rounded-circle" alt="Динамит" onclick="openImagePopup(this.src)">
+          <div>
+            <h5>Динамит</h5>
+            <p>Пикантный тунец, японский омлет, грибы Шинтаке, майонез, соус Чили, огурец</p>
+            <p>Цена: 1900 тг</p>
+            <button class="add-to-cart-btn" onclick="addToCartCustom('Динамит',1900, this)">
+              <span class="btn-text">Добавить в корзину</span>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <div class="qty-controls">
+              <button onclick="decrementQty(this)">-</button>
+              <span class="qtyVal">1</span>
+              <button onclick="incrementQty(this)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="images/sushi/Сяке Маки.jpg" class="rounded-circle" alt="Сяке Маки" onclick="openImagePopup(this.src)">
+          <div>
+            <h5>Сяке Маки</h5>
+            <p>Ролл с нежным лососем, который подарит вам настоящую гастрономическую радость</p>
+            <p>Цена: 1500 тг</p>
+            <button class="add-to-cart-btn" onclick="addToCartCustom('Сяке Маки',1500, this)">
+              <span class="btn-text">Добавить в корзину</span>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <div class="qty-controls">
+              <button onclick="decrementQty(this)">-</button>
+              <span class="qtyVal">1</span>
+              <button onclick="incrementQty(this)">+</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  
+
+  <!-- Нижнее меню с корзиной (сумма и количество) -->
   <div class="bottom-menu">
-    <!-- Обновлённые иконки для нижнего меню -->
-    <div class="menu-item" onclick="scrollToTop()">
-      <i class="fa-solid fa-hat-chef"></i><br>Меню
+    <div class="menu-item" onclick="scrollToMenu()">
+      <i class="fa-solid fa-utensils"></i><br>Меню
     </div>
     <div class="menu-item" onclick="openPopup('deliveryPopup')">
       <i class="fa-solid fa-truck"></i><br>Доставка
     </div>
     <div class="menu-item" onclick="openPopup('cartPopup')">
-      <i class="fa-solid fa-cart-shopping"></i><br>Корзина
+      <i class="fa-solid fa-cart-shopping"></i>
+      <div class="cart-total" id="cartTotal">0 тг</div>
     </div>
   </div>
-  
+
+  <!-- Popup для просмотра изображения (увеличенная картинка) -->
+  <div id="imagePopup">
+    <img id="imagePopupImg" src="" alt="Просмотр изображения">
+    <br>
+    <button class="popup-close" onclick="closePopup('imagePopup')">Закрыть</button>
+  </div>
+
+  <!-- Другие Popup окна -->
   <div id="promoPopup" class="popup">
-    <img src="promo1.jpg" alt="Акция">
+    <img src="images/akcii/1.png" alt="Акция">
     <button class="popup-close" onclick="closePopup('promoPopup')">Закрыть</button>
   </div>
-  
+
   <div id="deliveryPopup" class="popup">
     <div class="text-center">
       <h3>Отслеживание заказа</h3>
@@ -196,41 +574,137 @@
       <button class="btn btn-success" onclick="closePopup('deliveryPopup')">Закрыть</button>
     </div>
   </div>
-  
+
   <div id="cartPopup" class="popup">
     <div class="text-center">
       <h3>Корзина</h3>
       <ul id="cartItems" class="list-unstyled"></ul>
-      <button class="btn btn-success" onclick="sendOrderToWhatsApp()">Отправить в WhatsApp</button>
+      <button class="btn btn-success" onclick="sendOrderToWhatsApp()">Заказать через <i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
       <button class="btn btn-secondary mt-2" onclick="closePopup('cartPopup')">Закрыть</button>
     </div>
   </div>
-  
+
   <script>
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Когда страница полностью загрузится
+  window.addEventListener('load', function() {
+    // Начнём анимацию кольца
+    let currentPercent = 0;     // Текущее значение
+    let maxPercent = 100;       // Максимум (100%)
+    let duration = 2000;        // Время анимации (2 сек)
+    let steps = 100;            // Количество шагов
+    let stepTime = duration / steps; // Интервал между шагами
+
+    let progressValue = document.getElementById('progressValue');
+    let progressRing = document.getElementById('progressRing');
+    let preloader = document.getElementById('preloader');
+
+    // Запускаем таймер
+    let interval = setInterval(() => {
+      currentPercent++;
+      if (currentPercent > maxPercent) {
+        // Достигли 100% — останавливаем
+        clearInterval(interval);
+
+        // Скрываем прелоадер через небольшой таймаут
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 2000);
+      } else {
+        // Обновляем текст и заливку кольца
+        progressValue.innerText = currentPercent + '%';
+        // Угол (0..360)
+        let angle = (360 * currentPercent) / 100;
+        // Делаем заливку кольца через conic-gradient
+        progressRing.style.background = `conic-gradient(
+          var(--accent-color) 0deg,
+          var(--accent-color) ${angle}deg,
+          #222 ${angle}deg,
+          #222 360deg
+        )`;
+      }
+    }, stepTime);
+  });
+
+  // Скролл к разделу меню
+  function scrollToMenu() {
+    document.getElementById('menuContainer').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Открытие и закрытие popup окон
+  function openPopup(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Отправка заказа через WhatsApp
+  function sendOrderToWhatsApp() {
+    let items = document.getElementById('cartItems').innerText;
+    let phone = '+77471608221';
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(items)}`);
+  }
+
+  // Popup для просмотра изображения
+  function openImagePopup(src) {
+    document.getElementById('imagePopupImg').src = src;
+    openPopup('imagePopup');
+  }
+
+  // Глобальные переменные для корзины
+  let cartCount = 0;
+  let cartTotal = 0;
+
+  // Функция для добавления товара с учетом количества
+  function addToCartCustom(item, price, btn) {
+    let qty = parseInt(btn.parentNode.querySelector('.qtyVal').innerText);
+    let totalPrice = price * qty;
+    cartCount += qty;
+    cartTotal += totalPrice;
+    document.getElementById('cartCount').innerText = cartCount;
+    document.getElementById('cartTotal').innerText = cartTotal + ' тг';
+
+    // Изменяем текст кнопки в карточке товара
+    let btnTextElem = btn.querySelector('.btn-text');
+    if (cartCount > 0) {
+      btnTextElem.innerText = 'Добавить к заказу';
+    } else {
+      btnTextElem.innerText = 'Добавить в корзину';
     }
-    function openPopup(id) {
-      document.getElementById(id).style.display = 'block';
+
+    $('#cartItems').append('<li>' + item + ' x ' + qty + ' - ' + totalPrice + ' тг</li>');
+    alert(item + ' добавлен в корзину');
+  }
+
+  // Функция для простого добавления (если не используется custom вариант)
+  function addToCart(item, price) {
+    alert(item + ' добавлен в корзину');
+    $('#cartItems').append('<li>' + item + ' - ' + price + ' тг</li>');
+  }
+
+  // Функции для изменения количества товара
+  function incrementQty(btn) {
+    let span = btn.parentNode.querySelector('.qtyVal');
+    let val = parseInt(span.innerText);
+    span.innerText = val + 1;
+  }
+  function decrementQty(btn) {
+    let span = btn.parentNode.querySelector('.qtyVal');
+    let val = parseInt(span.innerText);
+    if (val > 1) {
+      span.innerText = val - 1;
     }
-    function closePopup(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-    function sendOrderToWhatsApp() {
-      let items = document.getElementById('cartItems').innerText;
-      let phone = '+77471608221';
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(items)}`);
-    }
-  
-    // Переключение вида меню с использованием иконок FontAwesome
-    $(document).ready(function(){
-      $('#listViewBtn').click(function(){
-        $('#menuContainer').removeClass('grid-view').addClass('list-view');
-      });
-      $('#gridViewBtn').click(function(){
-        $('#menuContainer').removeClass('list-view').addClass('grid-view');
-      });
+  }
+
+  // Переключение вида меню через кнопки сортировки
+  $(document).ready(function(){
+    $('#listViewBtn').click(function(){
+      $('#menuContainer').removeClass('grid-view').addClass('list-view');
     });
-  </script>
+    $('#gridViewBtn').click(function(){
+      $('#menuContainer').removeClass('list-view').addClass('grid-view');
+    });
+  });
+</script>
 </body>
 </html>
