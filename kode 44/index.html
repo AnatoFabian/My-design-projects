@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE 44 | Кинематографический продакшн</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+        
+        .hero-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        .silver-gradient {
+            background: linear-gradient(135deg, #c0c0c0 0%, #8e8e8e 50%, #c0c0c0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(192, 192, 192, 0.5);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(192, 192, 192, 0.8), 0 0 20px rgba(192, 192, 192, 0.4);
+            }
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .slide-in {
+            animation: slideIn 1.5s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .border-glow {
+            box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .border-glow:hover {
+            box-shadow: 0 0 25px rgba(192, 192, 192, 0.6);
+        }
+        
+        .clip-path {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .video-container {
+            perspective: 1000px;
+        }
+        
+        .video-card {
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+        
+        .video-card:hover {
+            transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .grid-overlay {
+            background-image: 
+                linear-gradient(rgba(192, 192, 192, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(192, 192, 192, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="relative grid-overlay">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="text-6xl mb-4 silver-gradient glow">CODE 44</div>
+            <div class="w-32 h-1 mx-auto bg-gradient-to-r from-transparent via-gray-400 to-transparent mt-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-black bg-opacity-90 backdrop-blur-md py-4 border-b border-gray-800">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold silver-gradient">CODE <span class="text-white">44</span></a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition duration-300">О нас</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-white transition duration-300">Портфолио</a>
+                <a href="#services" class="text-gray-300 hover:text-white transition duration-300">Услуги</a>
+                <a href="#process" class="text-gray-300 hover:text-white transition duration-300">Процесс</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Контакты</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-300 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95 absolute top-full left-0 right-0 py-4 px-6">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="text-gray-300 hover:text-white transition duration-300">О нас</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-white transition duration-300">Портфолио</a>
+                <a href="#services" class="text-gray-300 hover:text-white transition duration-300">Услуги</a>
+                <a href="#process" class="text-gray-300 hover:text-white transition duration-300">Процесс</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <video autoplay muted loop class="absolute w-full h-full object-cover">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-on-bridges-and-streets-31565-large.mp4" type="video/mp4">
+        </video>
+        
+        <div class="container mx-auto px-6 z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 hero-text">
+                <span class="silver-gradient">CINEMATIC</span> <span class="text-white">STORYTELLING</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto slide-in">
+                Мы создаем визуальные нарративы в стиле Гая Ричи — динамичные, стильные и запоминающиеся
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#portfolio" class="px-8 py-3 bg-transparent border border-gray-400 text-gray-300 hover:bg-gray-800 hover:text-white transition duration-300 transform hover:scale-105">
+                    Наши работы
+                </a>
+                <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-gray-600 to-gray-400 text-white hover:from-gray-500 hover:to-gray-300 transition duration-300 transform hover:scale-105">
+                    Обсудить проект
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <i class="fas fa-chevron-down text-gray-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 silver-gradient">CODE 44</h2>
+                <div class="w-24 h-1 bg-gray-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Продакшн студия, специализирующаяся на создании кинематографического контента с фирменным стилем
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="video-container">
+                    <div class="video-card border-glow rounded-lg overflow-hidden">
+                        <video autoplay muted loop class="w-full h-auto">
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-under-multicolored-lights-1237-large.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 silver-gradient">Наша философия</h3>
+                    <p class="text-gray-400 mb-6">
+                        Вдохновляясь работами Гая Ричи, мы создаем контент, который сочетает в себе динамичный монтаж, 
+                        неожиданные сюжетные повороты и визуальную стилизацию. Каждый наш проект — это тщательно 
+                        продуманная история, рассказанная через призму кинематографического мастерства.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 transform hover:scale-105 transition duration-300">
+                            <div class="text-4xl silver-gradient mb-4">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">Киноязык</h4>
+                            <p class="text-gray-400 text-sm">Используем профессиональные кинематографические приемы</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 transform hover:scale-105 transition duration-300">
+                            <div class="text-4xl silver-gradient mb-4">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">Креатив</h4>
+                            <p class="text-gray-400 text-sm">Нестандартные решения для ваших задач</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 silver-gradient">Наши работы</h2>
+                <div class="w-24 h-1 bg-gray-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Каждый проект — это уникальная история, рассказанная через визуальные образы
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-lg border border-gray-800 transform hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Project 1" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <h3 class="text-2xl font-bold text-white mb-2">"Контракт"</h3>
+                        <p class="text-gray-300">Короткометражный криминальный триллер</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 z-30">
+                        <a href="#" class="px-6 py-3 bg-white text-black font-bold rounded-full transform hover:scale-110 transition duration-300">
+                            Смотреть
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-lg border border-gray-800 transform hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Project 2" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <h3 class="text-2xl font-bold text-white mb-2">"Перекресток"</h3>
+                        <p class="text-gray-300">Музыкальный клип в стиле неонуар</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 z-30">
+                        <a href="#" class="px-6 py-3 bg-white text-black font-bold rounded-full transform hover:scale-110 transition duration-300">
+                            Смотреть
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-lg border border-gray-800 transform hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Project 3" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute bottom-0 left-0 p-6 z-20">
+                        <h3 class="text-2xl font-bold text-white mb-2">"Сделка"</h3>
+                        <p class="text-gray-300">Рекламный ролик для премиального бренда</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 z-30">
+                        <a href="#" class="px-6 py-3 bg-white text-black font-bold rounded-full transform hover:scale-110 transition duration-300">
+                            Смотреть
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-8 py-3 border border-gray-600 text-gray-300 hover:bg-gray-900 hover:text-white transition duration-300">
+                    Все проекты
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 silver-gradient">Наши услуги</h2>
+                <div class="w-24 h-1 bg-gray-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Полный цикл производства видео контента от идеи до финального монтажа
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 transform hover:-translate-y-2 transition duration-300">
+                    <div class="text-5xl silver-gradient mb-6 float">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Видеопродакшн</h3>
+                    <ul class="text-gray-400 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Полный цикл съемок</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Профессиональное оборудование</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Работа с актерами и моделями</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 transform hover:-translate-y-2 transition duration-300">
+                    <div class="text-5xl silver-gradient mb-6 float">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Постпродакшн</h3>
+                    <ul class="text-gray-400 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Монтаж в стиле Гая Ричи</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Цветокоррекция и грейдинг</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Визуальные эффекты</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 transform hover:-translate-y-2 transition duration-300">
+                    <div class="text-5xl silver-gradient mb-6 float">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Креатив</h3>
+                    <ul class="text-gray-400 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Разработка концепции</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Сценарии и сториборды</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gray-500 mr-2 mt-1"></i>
+                            <span>Арт-дирекшн</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 silver-gradient">Наш процесс</h2>
+                <div class="w-24 h-1 bg-gray-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Четко структурированный подход к каждому проекту
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-800"></div>
+                
+                <!-- Process Items -->
+                <div class="space-y-16 md:space-y-0">
+                    <!-- Step 1 -->
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 mb-8 md:mb-0 text-right">
+                            <h3 class="text-2xl font-bold silver-gradient mb-2">Концепция</h3>
+                            <p class="text-gray-400">
+                                Разработка уникальной идеи, которая станет основой вашего видео. Мы погружаемся в ваш бренд и создаем концепцию, которая будет работать.
+                            </p>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-gray-900 border-4 border-gray-700 flex items-center justify-center mx-auto">
+                            <span class="text-xl font-bold silver-gradient">1</span>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12"></div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-gray-900 border-4 border-gray-700 flex items-center justify-center mx-auto">
+                            <span class="text-xl font-bold silver-gradient">2</span>
+                        </div>
+                        <div class="md:w-5/12 mb-8 md:mb-0">
+                            <h3 class="text-2xl font-bold silver-gradient mb-2">Препродакшн</h3>
+                            <p class="text-gray-400">
+                                Подготовка к съемкам: кастинг, локации, раскадровки, планирование. Каждый этап тщательно прорабатывается для идеального результата.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 mb-8 md:mb-0 text-right">
+                            <h3 class="text-2xl font-bold silver-gradient mb-2">Съемки</h3>
+                            <p class="text-gray-400">
+                                Профессиональная реализация концепции с использованием лучшего оборудования и командой экспертов.
+                            </p>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-gray-900 border-4 border-gray-700 flex items-center justify-center mx-auto">
+                            <span class="text-xl font-bold silver-gradient">3</span>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12"></div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-gray-900 border-4 border-gray-700 flex items-center justify-center mx-auto">
+                            <span class="text-xl font-bold silver-gradient">4</span>
+                        </div>
+                        <div class="md:w-5/12 mb-8 md:mb-0">
+                            <h3 class="text-2xl font-bold silver-gradient mb-2">Постпродакшн</h3>
+                            <p class="text-gray-400">
+                                Монтаж, цветокоррекция, звук и графика. Мы доводим материал до совершенства, создавая кинематографический продукт.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900 parallax" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80');">
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <div class="container mx-auto px-6 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 silver-gradient">Отзывы клиентов</h2>
+                <div class="w-24 h-1 bg-gray-500 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg border border-gray-800">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-600">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-xl font-bold">Александр Петров</h4>
+                            <p class="text-gray-400">Директор по маркетингу, Black Label</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Работа с CODE 44 — это всегда гарантия качества. Их стиль съемки и монтажа идеально подошел для нашего бренда. Видео получилось динамичным и стильным, точно как мы и хотели."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg border border-gray-800">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-600">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-xl font-bold">Екатерина Смирнова</h4>
+                            <p class="text-gray-400">Продюсер, Next Music</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Мы сотрудничаем с CODE 44 уже несколько лет. Их умение создавать визуальные истории в стиле Гая Ричи просто поражает. Каждый клип — это маленький шедевр."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 silver-gradient">Давайте работать вместе</h2>
+                    <p class="text-xl text-gray-400 mb-8">
+                        Готовы обсудить ваш проект? Оставьте заявку, и мы свяжемся с вами в ближайшее время.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-2xl silver-gradient mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Email</h4>
+                                <a href="mailto:info@code44.com" class="text-gray-400 hover:text-white transition">info@code44.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl silver-gradient mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Телефон</h4>
+                                <a href="tel:+79991234567" class="text-gray-400 hover:text-white transition">+7 (999) 123-45-67</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl silver-gradient mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Адрес</h4>
+                                <p class="text-gray-400">Москва, ул. Кинематографическая, 44</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-400 mb-2">Ваше имя</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-400 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="project" class="block text-gray-400 mb-2">Тип проекта</label>
+                            <select id="project" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 text-white">
+                                <option value="">Выберите тип проекта</option>
+                                <option value="commercial">Рекламный ролик</option>
+                                <option value="music">Музыкальный клип</option>
+                                <option value="shortfilm">Короткометражный фильм</option>
+                                <option value="corporate">Корпоративное видео</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-400 mb-2">Сообщение</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 text-white"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-400 text-white font-bold rounded-lg hover:from-gray-500 hover:to-gray-300 transition duration-300 transform hover:scale-105">
+                            Отправить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold silver-gradient mb-4">CODE 44</h3>
+                    <p class="text-gray-400">
+                        Кинематографический продакшн премиум класса. Создаем визуальные истории с 2015 года.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-white">Навигация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">О нас</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Портфолио</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Услуги</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-white transition">Процесс</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-white">Услуги</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Видеопродакшн</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Постпродакшн</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Креатив</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Аренда оборудования</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-white">Соцсети</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition">
+                            <i class="fab fa-vimeo-v"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <a href="#contact" class="inline-block px-6 py-2 border border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white transition">
+                            Связаться с нами
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2023 CODE 44. Все права защищены.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-gray-400 text-sm">Политика конфиденциальности</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-400 text-sm">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.visibility = 'hidden';
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const project = document.getElementById('project').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            console.log({name, email, project, message});
+            
+            // Show success message
+            alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.slide-in, .float, .pulse');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateX(0)';
+                }
+            });
+        };
+
+        // Run once on load and then on scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
